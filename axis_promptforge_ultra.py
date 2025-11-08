@@ -155,6 +155,56 @@ class OptionalDependencies:
         except ImportError:
             logger.warning("⚠️  PyFiglet indisponível")
 
+    @classmethod
+    def get_console(cls) -> Any:
+        """Retorna console rich ou None."""
+        return cls._console
+
+    @classmethod
+    def get_rich_print(cls) -> Any:
+        """Retorna função de print do rich ou print padrão."""
+        return cls._rich_print if cls.USE_RICH else print
+
+    @classmethod
+    def get_prompt_class(cls) -> Any:
+        """Retorna classe Prompt do rich."""
+        return cls._prompt_class
+
+    @classmethod
+    def get_confirm_class(cls) -> Any:
+        """Retorna classe Confirm do rich."""
+        return cls._confirm_class
+
+    @classmethod
+    def get_panel_class(cls) -> Any:
+        """Retorna classe Panel do rich."""
+        return cls._panel_class
+
+    @classmethod
+    def get_table_class(cls) -> Any:
+        """Retorna classe Table do rich."""
+        return cls._table_class
+
+    @classmethod
+    def get_progress_class(cls) -> Any:
+        """Retorna classe Progress do rich."""
+        return cls._progress_class
+
+    @classmethod
+    def get_live_class(cls) -> Any:
+        """Retorna classe Live do rich."""
+        return cls._live_class
+
+    @classmethod
+    def get_markdown_class(cls) -> Any:
+        """Retorna classe Markdown do rich."""
+        return cls._markdown_class
+
+    @classmethod
+    def get_syntax_class(cls) -> Any:
+        """Retorna classe Syntax do rich."""
+        return cls._syntax_class
+
 
 # Inicializa dependências
 OptionalDependencies.initialize()
